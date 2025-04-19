@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# audio_multiplier
+# Bash wrapper for Python audio multiplier script
+
+# Check if exactly 2 arguments are passed
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <input_mp3_file> <repeat_count>"
+    exit 1
+fi
+
+INPUT_FILE="$1"
+REPEAT_COUNT="$2"
+
+# Validate input file exists
+if [ ! -f "$INPUT_FILE" ]; then
+    echo "Error: File '$INPUT_FILE' not found."
+    exit 1
+fi
+
+# Validate repeat count is a positive integer
+if ! [[ "$REPEAT_COUNT" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Error: Repeat count must be a positive integer."
+    exit 1
+fi
+
+if [[ -f audio.multiplier.py ]]; then
+    python mp3.multiplier.py "$INPUT_FILE" "$REPEAT_COUNT"
+else
+    python3 /usr/local/bin/mp3.multiplier.py "$INPUT_FILE" "$REPEAT_COUNT"
+fi
+
