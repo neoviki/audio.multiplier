@@ -8,7 +8,7 @@ This tool takes an input `.mp3` file and repeats it multiple times to generate a
 ## Install
 
 ```bash
-sudo ./install.sh
+./install.ubuntu.sh
 ```
 
 This script installs all necessary dependencies.
