@@ -27,11 +27,11 @@ check_installation_status() {
 chmod +x install.dependencies.ubuntu.sh
 sudo ./install.dependencies.ubuntu.sh
 
-UTILITY_NAME="src/mp3.multiplier.py"
+UTILITY_NAME="src/audio.multiplier.py"
 install_util
 check_installation_status $?
 
-UTILITY_NAME="src/mp3.multiplier"
+UTILITY_NAME="src/audio.multiplier"
 install_util
 check_installation_status $?
 

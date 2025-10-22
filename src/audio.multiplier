@@ -25,8 +25,8 @@ if ! [[ "$REPEAT_COUNT" =~ ^[1-9][0-9]*$ ]]; then
 fi
 
 if [[ -f audio.multiplier.py ]]; then
-    python mp3.multiplier.py "$INPUT_FILE" "$REPEAT_COUNT"
+    python audio.multiplier.py "$INPUT_FILE" "$REPEAT_COUNT"
 else
-    python3 /usr/local/bin/mp3.multiplier.py "$INPUT_FILE" "$REPEAT_COUNT"
+    python3 /usr/local/bin/audio.multiplier.py "$INPUT_FILE" "$REPEAT_COUNT"
 fi
 
